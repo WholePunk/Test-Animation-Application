@@ -110,19 +110,8 @@ public class MainActivity extends Activity implements AnimatorUpdateListener, An
 	public void onAnimationEnd(Animator animation) 
 	{
 		ListView lv = (ListView) findViewById(R.id.square);
-		
-		ViewGroup.MarginLayoutParams finalParams = new ViewGroup.MarginLayoutParams((ViewGroup.MarginLayoutParams) lv.getLayoutParams());
-								
-		if (menuOpen)
-		{
-			finalParams.setMargins(700, finalParams.topMargin, finalParams.rightMargin, finalParams.bottomMargin);
-		}
-		else
-		{
-			finalParams.setMargins(100, finalParams.topMargin, finalParams.rightMargin, finalParams.bottomMargin);
-		}	
-		
-		lv.setLayoutParams((LayoutParams)finalParams);
+				
+		lv.setLayoutParams(lv.getLayoutParams());
 		
 		lv.invalidate();
 		
